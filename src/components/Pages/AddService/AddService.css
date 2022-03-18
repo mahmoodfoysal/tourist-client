@@ -1,0 +1,17 @@
+.addService-table form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.addService-table input, textarea {
+    width: 40%;
+    padding: 5px;
+    margin-bottom: 20px ;
+}
+#button-style {
+    width: 10%;
+    border-radius: 20px;
+    cursor: pointer;
+}

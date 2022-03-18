@@ -1,0 +1,17 @@
+.add-booking-table form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-booking-table input, textarea {
+    width: 80%;
+    padding: 5px;
+    margin-bottom: 20px ;
+}
+#button-style {
+    width: 20%;
+    border-radius: 20px;
+    cursor: pointer;
+}
