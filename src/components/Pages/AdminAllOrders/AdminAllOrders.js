@@ -1,7 +1,6 @@
-import React,{ useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
-
-const MyOrder = () => {
+const AdminAllOrders = () => {
     const [orders, setOrders] = useState([]);
     useEffect(() => {
         fetch(`http://localhost:5000/booking`)
@@ -26,18 +25,43 @@ const MyOrder = () => {
             })
         }
     }
+
+    // update order status 
+    const handleUpdateClick = (id, status) => {
+        const data = { status: status };
+        const proceed = window.confirm("Are you sure, You want to Approve?");
+        if (proceed) {
+          const url = `http://localhost:5000/booking/${id}`;
+          fetch(url, {
+            method: "PUT",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(data),
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              if (data.modifiedCount === 1) {
+                alert("Successfully Updated ");
+                setOrders(orders);
+              } 
+            });
+        }
+      };
     return (
         <div className='container'>
-            <h1 className='text-center mt-5 mb-5'>My Orders</h1>
+            <h1 className='text-center mt-5 mb-5'>All Orders</h1>
             <table className="table table-dark">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Name</th>
+                        <th scope="col">Email</th>
                         <th scope="col">Order</th>
                         <th scope="col">Price</th>
                         <th scope="col">Date</th>
                         <th scope="col">Status</th>
+                        <th scope="col">Status Change</th>
                         <th scope="col">Delete</th>
 
                     </tr>
@@ -49,10 +73,13 @@ const MyOrder = () => {
                             <tr>
                             <th scope="row">*</th>
                             <td>{order.name}</td>
+                            <td>{order.email}</td>
                             <td>{order.orderName}</td>
                             <td>{order.orderPrice}</td>
                             <td>{order.date}</td>
                             <td>{order.orderStatus}</td>
+                            
+                            <td><i onClick={() => handleUpdateClick(order._id, "Approved")} class="fas fa-check text-success"></i></td>
                             <td><i onClick={() => handleDeleteClick(order._id)} className="fas fa-trash text-danger"></i></td>
                         </tr>
 
@@ -65,4 +92,4 @@ const MyOrder = () => {
     );
 };
 
-export default MyOrder;
+export default AdminAllOrders;

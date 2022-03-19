@@ -15,7 +15,7 @@ const Service = (props) => {
                         <h5 className="card-title">{location}</h5>
                         <h5 className='text-danger'>{offer}</h5>
                         </div>
-                        <p className="card-text">{description}</p>
+                        <p className="card-text">{description.slice(0,50)}</p>
                         <hr />
                         <div className='d-flex justify-content-between'>
                             <h6>Duration: {duration} days</h6>

@@ -12,7 +12,7 @@ import AddService from './components/Pages/AddService/AddService';
 import Footer from './components/Pages/Shared/Footer/Footer';
 import Booking from './components/Pages/Booking/Booking';
 import MyOrder from './components/Pages/MyOrder/MyOrder';
-import MyOrders from './components/Pages/MyOrders/MyOrders';
+import AdminAllOrders from './components/Pages/AdminAllOrders/AdminAllOrders';
 
 function App() {
   return (
@@ -43,6 +43,9 @@ function App() {
         </Route>
         <Route path="/myOrder">
           <MyOrder></MyOrder>
+        </Route>
+        <Route path="/allOrders">
+          <AdminAllOrders></AdminAllOrders>
         </Route>
         <Route path="*">
           <NotFound></NotFound>
