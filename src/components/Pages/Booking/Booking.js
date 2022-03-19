@@ -16,7 +16,7 @@ const Booking = () => {
     
     
     useEffect(() => {
-        const url = `http://localhost:5000/services/${id}`
+        const url = `https://pure-brook-29213.herokuapp.com/services/${id}`
         fetch(url)
             .then(res => res.json())
             .then(data => setService(data))
@@ -36,7 +36,7 @@ const Booking = () => {
         data.orderPrice = price;
         data.orderStatus = "Pending";
         console.log(data)
-        axios.post(`http://localhost:5000/booking`, data)
+        axios.post(`https://pure-brook-29213.herokuapp.com/booking`, data)
         .then(res => {
             if(res.data.insertedId) {
                 alert('Booking Successfully')

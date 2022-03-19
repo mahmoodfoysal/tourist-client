@@ -6,7 +6,7 @@ const About = () => {
     return (
         <div className='container'>
             <h2 className='text-center mb-5 mt-5'>About Us</h2>
-            <div className="row d-flex justify-content-between g-5">
+            <div className="row d-flex justify-content-between g-4">
                 <div className="col-md-6">
                     <img style={{width:"100%"}} src={about} alt="about us"/>
                 </div>

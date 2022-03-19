@@ -66,7 +66,7 @@ const Footer = () => {
                                     <ul className="list-unstyled mb-0">
                                         <li>Open 24 Hours</li>
                                         <li>Phone: +880 1700-000000</li>
-                                        <li>Email: medicare@gmail.com</li>
+                                        <li>Email: foysalcse033@gmail.com</li>
                                         <li>Location: Dhaka, Bangladesh</li>
                                     </ul>
                                 </div>
@@ -76,11 +76,8 @@ const Footer = () => {
                                 <div className="text-start">
                                     <h5 className="text-uppercase">Services</h5>
                                     <ul className="list-unstyled mb-0">
-                                        <li>Dental Surgery</li>
-                                        <li>Eyes Operation</li>
-                                        <li>Orthopedic</li>
-                                        <li>Neurology</li>
-                                        <li>General Surgery</li>
+                                        <li>Tourism</li>
+
                                     </ul>
                                 </div>
                             </div>

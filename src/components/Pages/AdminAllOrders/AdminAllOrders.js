@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 const AdminAllOrders = () => {
     const [orders, setOrders] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/booking`)
+        fetch(`https://pure-brook-29213.herokuapp.com/booking`)
         .then(res => res.json())
         .then(data => setOrders(data))
     }, [orders])
@@ -11,7 +11,7 @@ const AdminAllOrders = () => {
     const handleDeleteClick = id => {
         const proceed = window.confirm("Are you sure, you want to delete");
         if(proceed) {
-            const url = `http://localhost:5000/booking/${id}`;
+            const url = `https://pure-brook-29213.herokuapp.com/booking/${id}`;
             fetch(url, {
                 method: "DELETE",
             })
@@ -31,7 +31,7 @@ const AdminAllOrders = () => {
         const data = { status: status };
         const proceed = window.confirm("Are you sure, You want to Approve?");
         if (proceed) {
-          const url = `http://localhost:5000/booking/${id}`;
+          const url = `https://pure-brook-29213.herokuapp.com/booking/${id}`;
           fetch(url, {
             method: "PUT",
             headers: {
