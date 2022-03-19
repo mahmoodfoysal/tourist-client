@@ -1,10 +1,10 @@
 import React from 'react';
 import './Header.css';
 import { Link } from 'react-router-dom';
-import useFirebase from '../../../hooks/useFirebase';
+import useAuth from '../../../hooks/useAuth';
 
 const Header = () => {
-    const {user, logOut} = useFirebase();
+    const {user, logOut} = useAuth();
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -25,12 +25,23 @@ const Header = () => {
                                 <Link className="nav-link active" aria-current="page" to="/about">About</Link>
                             </li>
 
+                   {user.email && <li className="nav-item dropdown">
+          <Link className="nav-link dropdown-toggle" to="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Manage
+          </Link>
+          <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><Link className="dropdown-item" to="myOrder">My Order</Link></li>
+            <li><Link className="dropdown-item" to="allOrders">Admin All Order</Link></li>
+            <li><Link className="dropdown-item" to="addService">Add Service</Link></li>
+          </ul>
+        </li> }
+
                         </ul>
-                        <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li className="nav-item mx-1 color"><strong>{user.email && 'Welcome,'} </strong>{user.displayName} </li>
-                        {user.displayName ? <button onClick={logOut}>Log Out</button> :
+                        <ul className="navbar-nav ms-auto mb-2 mb-lg-0 mx-3">
+                        <li className="nav-item mx-2 color"><strong>{user.email && 'Welcome,'} </strong>{user.displayName} </li>
+                        {user.displayName ? <button className='logout-btn' onClick={logOut}>Log Out</button> :
                             <Link to="/login">
-                                <button>Login</button>
+                                <button className='login-btn'>Login</button>
                             </Link>}
                         </ul>
                     </div>

@@ -6,7 +6,7 @@ const AdminAllOrders = () => {
         fetch(`http://localhost:5000/booking`)
         .then(res => res.json())
         .then(data => setOrders(data))
-    }, [])
+    }, [orders])
 
     const handleDeleteClick = id => {
         const proceed = window.confirm("Are you sure, you want to delete");
@@ -51,7 +51,8 @@ const AdminAllOrders = () => {
     return (
         <div className='container'>
             <h1 className='text-center mt-5 mb-5'>All Orders</h1>
-            <table className="table table-dark">
+            <div className=''>
+            <table className="table table-sm table-responsive-sm table-dark">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
@@ -75,7 +76,7 @@ const AdminAllOrders = () => {
                             <td>{order.name}</td>
                             <td>{order.email}</td>
                             <td>{order.orderName}</td>
-                            <td>{order.orderPrice}</td>
+                            <td>$ {order.orderPrice}</td>
                             <td>{order.date}</td>
                             <td>{order.orderStatus}</td>
                             
@@ -88,6 +89,7 @@ const AdminAllOrders = () => {
 
                 </tbody>
             </table>
+            </div>
         </div>
     );
 };

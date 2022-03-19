@@ -1,0 +1,12 @@
+.google-btn {
+    background-color: white;
+    color: forestgreen;
+    border: 1px solid forestgreen;
+    height: 40px;
+    width: 150px;
+    border-radius: 5px;
+}
+.google-btn:hover {
+    background-color: forestgreen;
+    color: white;
+}

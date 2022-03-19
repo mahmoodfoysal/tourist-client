@@ -1,3 +1,29 @@
 .color {
     color: white;
 }
+.login-btn {
+    background-color: black;
+    color: forestgreen;
+    border: 1px solid forestgreen;
+    height: 35px;
+    width: 100px;
+    border-radius: 5px;
+    font-weight: 600;
+}
+.login-btn:hover {
+    background-color: forestgreen;
+    color: white;
+}
+.logout-btn {
+    background-color: black;
+    color: goldenrod;
+    border: 1px solid goldenrod;
+    height: 35px;
+    width: 100px;
+    border-radius: 5px;
+    font-weight: 600;
+}
+.logout-btn:hover {
+    background-color: goldenrod;
+    color: white;
+}

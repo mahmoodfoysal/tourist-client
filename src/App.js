@@ -13,11 +13,14 @@ import Footer from './components/Pages/Shared/Footer/Footer';
 import Booking from './components/Pages/Booking/Booking';
 import MyOrder from './components/Pages/MyOrder/MyOrder';
 import AdminAllOrders from './components/Pages/AdminAllOrders/AdminAllOrders';
+import AuthProvider, { AuthContext } from './components/Context/AuthProvider';
+import PrivateRoute from './components/Pages/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
     <div className="">
-      <BrowserRouter>
+     <AuthProvider>
+     <BrowserRouter>
       <Header></Header>
       <Switch>
         <Route exact path="/">
@@ -35,24 +38,25 @@ function App() {
         <Route path="/login">
           <Login></Login>
         </Route>
-        <Route path="/addService">
+        <PrivateRoute path="/addService">
           <AddService></AddService>
-        </Route>
-        <Route path="/booking/:id">
+        </PrivateRoute>
+        <PrivateRoute path="/booking/:id">
           <Booking></Booking>
-        </Route>
-        <Route path="/myOrder">
+        </PrivateRoute>
+        <PrivateRoute path="/myOrder">
           <MyOrder></MyOrder>
-        </Route>
-        <Route path="/allOrders">
+        </PrivateRoute>
+        <PrivateRoute path="/allOrders">
           <AdminAllOrders></AdminAllOrders>
-        </Route>
+        </PrivateRoute>
         <Route path="*">
           <NotFound></NotFound>
         </Route>
       </Switch>
       <Footer></Footer>
       </BrowserRouter>
+     </AuthProvider>
     </div>
   );
 }

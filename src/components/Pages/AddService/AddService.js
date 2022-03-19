@@ -19,12 +19,12 @@ const AddService = () => {
 
     return (
         <div className='addService-table'>
-            <h1 className='mb-5'>Add Service</h1>
+            <h1 className='text-center mt-5 mb-5'>Add Service</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
       <input {...register("name")} placeholder="Name of Place" />
       <input {...register("location")} placeholder="Location Name" />
       <input {...register("offer")} placeholder="How many % offer your agency"/>
-      <textarea {...register("description")} placeholder="Description" />
+      <textarea className='add-textArea' {...register("description")} placeholder="Description" />
       <input type="number" {...register("duration")} placeholder="How many days duration" />
       <input type="number" {...register("members")} placeholder="How Many group member" />
       <input type="number" {...register("price")} placeholder="Package Price" />

@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react';
 import './Booking.css';
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
-import useFirebase from '../../hooks/useFirebase';
 import axios from 'axios';
+import useAuth from '../../hooks/useAuth';
 
 const Booking = () => {
     const { register, handleSubmit, reset } = useForm();
-    const {user} = useFirebase()
+    const {user} = useAuth()
     const [service, setService] = useState([]);
     const { id } = useParams();
     const { image, name, location, description, offer, duration, members, price } = service;

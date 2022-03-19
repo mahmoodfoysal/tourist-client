@@ -29,7 +29,8 @@ const MyOrder = () => {
     return (
         <div className='container'>
             <h1 className='text-center mt-5 mb-5'>My Orders</h1>
-            <table className="table table-dark">
+            <div className='table-responsive-sm'>
+            <table className="table table-sm table-dark">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
@@ -50,7 +51,7 @@ const MyOrder = () => {
                             <th scope="row">*</th>
                             <td>{order.name}</td>
                             <td>{order.orderName}</td>
-                            <td>{order.orderPrice}</td>
+                            <td>$ {order.orderPrice}</td>
                             <td>{order.date}</td>
                             <td>{order.orderStatus}</td>
                             <td><i onClick={() => handleDeleteClick(order._id)} className="fas fa-trash text-danger"></i></td>
@@ -61,6 +62,7 @@ const MyOrder = () => {
 
                 </tbody>
             </table>
+            </div>
         </div>
     );
 };
