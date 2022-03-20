@@ -51,8 +51,8 @@ const AdminAllOrders = () => {
     return (
         <div className='container'>
             <h1 className='text-center mt-5 mb-5'>All Orders</h1>
-            <div className=''>
-            <table className="table table-sm table-responsive-sm table-dark">
+            <div className='table-responsive-sm'>
+            <table className="table table-sm table-dark">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
